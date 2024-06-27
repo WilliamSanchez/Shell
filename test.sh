@@ -12,4 +12,12 @@ read myvar
 
 echo '$myvar' now equals $myvar
 
+echo "Vamos ocultar o echo"
+
+echo "input a variavel"
+stty -echo
+read var
+stty echo
+echo "After ocult variavel $var"
+
 exit 0
