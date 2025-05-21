@@ -4,6 +4,12 @@ release_file=/etc/os-release
 logfiles=/var/log/updater.log
 errorlog=/var/log/updater_errors.log
 
+function checksum()
+{
+   sum=$(($1+$2))
+   echo "the sum of $1 + $2 = $sum"
+}
+
 check_exit_status(){
 
   if [ $? -ne 0  ]
@@ -12,6 +18,7 @@ check_exit_status(){
   fi
 }
 
+checksum 1 2
 
 if grep -q "Arch" $release_file 
 then
